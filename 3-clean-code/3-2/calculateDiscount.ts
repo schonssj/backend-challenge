@@ -1,15 +1,14 @@
 export function calculateDiscount(price: number, isPremium: boolean): number {
     if (isPremium) {
-        if (price > 100) {
-            return price * 0.8;
-        } else {
-            return price * 0.9;
-        }
-    } else {
-        if (price > 100) {
-            return price * 0.9;
-        } else {
-            return price;
-        }
+      return applyPremiumDiscount(price);
     }
+    return applyRegularDiscount(price);
+}
+  
+function applyPremiumDiscount(price: number): number {
+    return price > 100 ? price * 0.8 : price * 0.9;
+}
+
+function applyRegularDiscount(price: number): number {
+    return price > 100 ? price * 0.9 : price;
 }
