@@ -1,4 +1,4 @@
-function calculateDiscount(price: number, isPremium: boolean): number {
+export function calculateDiscount(price: number, isPremium: boolean): number {
     if (isPremium) {
         if (price > 100) {
             return price * 0.8;
