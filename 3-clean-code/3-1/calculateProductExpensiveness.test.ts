@@ -1,6 +1,6 @@
-import { processItems } from './processItems';
+import { calculateProductExpensiveness } from './calculateProductExpensiveness';
 
-describe('processItems', () => {
+describe('calculateProductExpensiveness', () => {
   it('should print items with price greater than 100', () => {
     const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
 
@@ -10,7 +10,7 @@ describe('processItems', () => {
       { name: 'Expensive product premium plus', price: 300 }
     ];
 
-    processItems(testItems);
+    calculateProductExpensiveness(testItems);
 
     expect(consoleSpy).toHaveBeenCalledTimes(2);
     expect(consoleSpy).toHaveBeenCalledWith('Expensive product is expensive');
