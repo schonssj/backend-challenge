@@ -22,6 +22,17 @@ FROM
 GROUP BY
   account_id, year, month;
 
+SELECT
+  account_id,
+  month,
+  year,
+  total_amount
+FROM
+  monthly_summary
+WHERE
+  total_amount > 10000;
+
+
 /*
 + ------------ + ---------- + ----------- + ------------ +
 | account_id   | month      | year        | total_amount |
